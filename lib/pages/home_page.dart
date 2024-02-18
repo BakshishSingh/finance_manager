@@ -1,5 +1,6 @@
 import 'package:finance_manager/components/app_bar.dart';
 import 'package:finance_manager/components/button_primary.dart';
+import 'package:finance_manager/pages/add_expense.dart';
 import 'package:finance_manager/utils/utility.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,9 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: const FAppBar(title: "Home"),
         floatingActionButton: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Utilities.loadPage(context, const AddExpense());
+          },
           icon: Icon(
             Icons.add_circle,
             size: 75,

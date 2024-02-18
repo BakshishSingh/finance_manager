@@ -2,14 +2,27 @@ import 'package:flutter/material.dart';
 
 class FAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  const FAppBar({super.key, required this.title});
+  final Color color;
+  final Color textColor;
+  const FAppBar({
+    super.key,
+    required this.title,
+    this.color = Colors.white,
+    this.textColor = Colors.black,
+  });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title),
-      // shadowColor: Colors.black,
-      // backgroundColor: const Color(0xff7F3DFF),
+      title: Text(
+        title,
+        style: TextStyle(
+          color: textColor,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      backgroundColor: color,
+      automaticallyImplyLeading: false,
     );
   }
 
