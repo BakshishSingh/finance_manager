@@ -1,4 +1,5 @@
 import 'package:finance_manager/components/app_bar.dart';
+import 'package:finance_manager/components/button_primary.dart';
 import 'package:finance_manager/utils/utility.dart';
 import 'package:flutter/material.dart';
 
@@ -24,11 +25,9 @@ class _HomePageState extends State<HomePage> {
             color: Colors.green,
             shadows: [
               Shadow(
-                  color: Colors.black.withAlpha(12),
-                  offset: const Offset(
-                    2,
-                    2,
-                  ))
+                color: Colors.black.withAlpha(12),
+                offset: const Offset(2, 2),
+              )
             ],
           ),
         ),
@@ -48,51 +47,13 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextButton(
-                  onPressed: () {},
-                  child: Container(
-                    width: 130,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        25,
-                      ),
-                      color: Colors.green,
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Income\n${Utilities.getCurrency('5000')}',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+                PrimaryTextButton(
+                  buttonText: 'Income\n${Utilities.getCurrency('5000')}',
+                  buttonColor: Colors.green,
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Container(
-                    width: 130,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        25,
-                      ),
-                      color: Colors.red,
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Expenses\n${Utilities.getCurrency('3000')}',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+                PrimaryTextButton(
+                  buttonText: 'Expenses\n${Utilities.getCurrency('3000')}',
+                  buttonColor: Colors.red,
                 ),
               ],
             ),
