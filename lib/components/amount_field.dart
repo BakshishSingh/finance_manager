@@ -2,14 +2,14 @@ import 'package:finance_manager/utils/utility.dart';
 import 'package:flutter/material.dart';
 
 class AmountTextField extends StatelessWidget {
-  const AmountTextField({super.key});
+  TextEditingController textController;
+  AmountTextField({super.key, required this.textController});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController amountController = new TextEditingController();
     String expenseValue;
     return TextField(
-      controller: amountController,
+      controller: textController,
       decoration: InputDecoration(
           hintText: Utilities.getCurrency('0'),
           border: InputBorder.none,
@@ -24,7 +24,7 @@ class AmountTextField extends StatelessWidget {
       textAlign: TextAlign.center,
       onChanged: (value) {
         expenseValue = value.replaceAll('₹', '');
-        amountController.text = Utilities.getCurrency(expenseValue);
+        textController.text = Utilities.getCurrency(expenseValue);
       },
       keyboardType: TextInputType.number,
     );
